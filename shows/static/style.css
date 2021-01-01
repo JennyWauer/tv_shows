@@ -2,3 +2,33 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+table {
+    margin: 1em 0;
+    border: 0.15em solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.25em;
+    text-align: left;
+    border-left: 0.15em solid black;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: whitesmoke;
+}
+
+table td:first-child, table th:first-child {
+    border-left: none;
+}
+
+table td:last-child, table th:last-child {
+    border-right: none;
+}
