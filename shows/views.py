@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 def index(request):
     return render(request, 'index.html')
@@ -11,3 +11,6 @@ def show_details(request, number):
 
 def edit(request, number):
     return render(request, 'edit.html')
+
+def delete(request, number):
+    return redirect('/shows')
