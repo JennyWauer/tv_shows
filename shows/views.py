@@ -8,3 +8,6 @@ def new(request):
 
 def show_details(request, number):
     return render(request, 'show-details.html')
+
+def edit(request, number):
+    return render(request, 'edit.html')
