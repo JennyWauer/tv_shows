@@ -14,7 +14,16 @@
         <th>Title</th>
         <th>Network</th>
         <th>Release Date</th>
-        <th>Actions</th>
+        <th colspan="3">Actions</th>
+        {% for show in shows %}
+            <tr>
+                <td>{{ show.id }}</td>
+                <td>{{ show.title }}</td>
+                <td>{{ show.network.name }}</td>
+                <td>{{ show.release_date }}</td>
+                <td><a>Show</a> | <a>Edit</a> | <a>Delete</a></td>
+            </tr>
+        {% endfor %}
     </table>
     <a>Add a New Show</a>
 </body>

@@ -3,7 +3,11 @@ from django.shortcuts import render, redirect
 from .models import *
 
 def index(request):
-    return render(request, 'index.html')
+    context = {
+        "shows": Show.objects.all(),
+        "networks": Network.objects.all()
+    }
+    return render(request, 'index.html', context)
 
 def new(request):
     return render(request, 'new.html')

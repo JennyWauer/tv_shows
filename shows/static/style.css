@@ -30,5 +30,5 @@ table td:first-child, table th:first-child {
 }
 
 table td:last-child, table th:last-child {
-    border-right: none;
+    border-right: 0.15em solid black;
 }
