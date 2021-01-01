@@ -5,3 +5,6 @@ def index(request):
 
 def new(request):
     return render(request, 'new.html')
+
+def show_details(request, number):
+    return render(request, 'show-details.html')
