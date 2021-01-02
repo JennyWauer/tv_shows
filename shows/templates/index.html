@@ -17,14 +17,14 @@
         <th colspan="3">Actions</th>
         {% for show in shows %}
             <tr>
-                <td>{{ show.id }}</td>
+                <td><a href="{{ show.id }}">{{ show.id }}</a></td>
                 <td>{{ show.title }}</td>
                 <td>{{ show.network.name }}</td>
                 <td>{{ show.release_date }}</td>
-                <td><a>Show</a> | <a>Edit</a> | <a>Delete</a></td>
+                <td><a href="{{ show.id }}">Show</a> | <a href="{{ show.id }}/edit">Edit</a> | <a href="{{ show.id }}/delete">Delete</a></td>
             </tr>
         {% endfor %}
     </table>
-    <a>Add a New Show</a>
+    <a href="new">Add a New Show</a>
 </body>
 </html>
