@@ -9,4 +9,5 @@ urlpatterns = [
     path('<number>/edit', views.edit),
     path('<number>/delete', views.delete),
     path('add_show', views.add_show),
+    path('edit_show', views.edit_show),
 ]

@@ -8,8 +8,15 @@
     <title>Show Details</title>
 </head>
 <body>
-    <h1>TV Show</h1>
-
+    <h1>TV Show {{ show.id }}</h1>
+    <p>Title: {{ show.title }}</p>
+    <p>Network: {{ show.network.name }}</p>
+    <p>Release Date: {{ show.release_date }}</p>
+    <p>Description: {{ show.desc }}</p>
+    <br>
+    <br>
+    <br>
+    <p>Last Updated: {{ show.updated_at }}</p>
     <a>Edit</a>
     <a>Delete</a>
 </body>
