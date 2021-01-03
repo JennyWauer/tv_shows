@@ -2,3 +2,22 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    padding: 1em;
+}
+
+p {
+    margin: 0.5em 0;
+}
+
+h1 {
+    margin-bottom: 0.5em;
+}
+
+.back {
+    margin-left: 75%;
+}

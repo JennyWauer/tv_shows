@@ -10,14 +10,15 @@
 <body>
     <h1>Edit Show {{ show.id }}</h1>
     <!-- Not working -->
-    <form action="/edit_show" method="POST">
+    <form action="/shows/edit_show" method="POST">
         {% csrf_token %}
+        <input type="hidden" name="show_id" value="{{ show_edit.id }}">
         <label for="title">Title</label>
-        <input type="text" name="title" class="wide-input" placeholder="{{ show.title }}">
+        <input type="text" name="title" class="wide-input" placeholder="{{ show_edit.title }}">
         <div>
             <div>
                 <label for="network">Network</label>
-                <input type="text" name="network" placeholder="{{ show.network.name }}">
+                <input type="text" name="network" placeholder="{{ show_edit.network.name }}">
             </div>
             <div>
                 <label for="release_date">Release Date</label>
@@ -25,9 +26,9 @@
             </div>
         </div>
         <label for="desc">Description</label>
-        <input type="text" class="wide-input" placeholder="{{ show.desc }}">
-        <input type="hidden" name="show_id" value="{{ show.id }}">
-        <input type="submit" name="submit" value="Create" class="submit">
+        <input type="text" class="wide-input" name="desc" placeholder="{{ show_edit.desc }}">
+        <input type="submit" name="submit" value="Update" class="submit">
     </form>
+    <a href="/shows">Go to Shows</a>
 </body>
 </html>

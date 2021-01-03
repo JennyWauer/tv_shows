@@ -10,10 +10,10 @@
 </head>
 
 <body>
-    <a>Go Back</a>
+    <a href="/shows">Go Back</a>
     <h1>Add a New Show</h1>
     <!-- Not working -->
-    <form action="/add_show" method="POST">
+    <form action="/shows/add_show" method="POST">
         {% csrf_token %}
         <label for="title">Title</label>
         <input type="text" name="title" class="wide-input">
@@ -28,7 +28,7 @@
             </div>
         </div>
         <label for="desc">Description</label>
-        <input type="text" class="wide-input">
+        <input type="text" class="wide-input" name="desc">
         <a><input type="submit" name="submit" value="Create" class="submit"></a>
     </form>
 </body>

@@ -8,6 +8,7 @@
     <title>Show Details</title>
 </head>
 <body>
+    <a href="/shows" class="back">Go Back</a>
     <h1>TV Show {{ show.id }}</h1>
     <p>Title: {{ show.title }}</p>
     <p>Network: {{ show.network.name }}</p>
@@ -15,9 +16,10 @@
     <p>Description: {{ show.desc }}</p>
     <br>
     <br>
-    <br>
     <p>Last Updated: {{ show.updated_at }}</p>
-    <a>Edit</a>
-    <a>Delete</a>
+    <div>
+        <p><a href="{{ show.id }}/edit">Edit</a> | <a href="{{ show.id }}/delete">Delete</a></p>
+    </div>
+    
 </body>
 </html>
