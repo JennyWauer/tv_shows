@@ -9,13 +9,6 @@
 </head>
 <body>
     <h1>Edit Show {{ show.id }}</h1>
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
     <form action="/shows/edit_show" method="POST">
         {% csrf_token %}
         <input type="hidden" name="show_id" value="{{ show_edit.id }}">
