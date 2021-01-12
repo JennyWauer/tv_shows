@@ -9,7 +9,6 @@
 </head>
 <body>
     <h1>Edit Show {{ show.id }}</h1>
-    <!-- Not working -->
     <form action="/shows/edit_show" method="POST">
         {% csrf_token %}
         <input type="hidden" name="show_id" value="{{ show_edit.id }}">
