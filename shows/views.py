@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 
 from .models import *
 
@@ -53,7 +53,7 @@ def edit_show(request):
         if len(edit_errors) > 0:
             for key, value in edit_errors.items():
                 messages.error(request, value)
-            return redirect('/shows/<int:number>/edit')
+            return render(request, 'edit.html')
         else:
             show_to_edit.title = request.POST['title']
             show_to_edit.network = request.POST['network']
