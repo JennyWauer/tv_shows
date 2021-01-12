@@ -5,15 +5,11 @@ from .models import *
 def index(request):
     context = {
         "shows": Show.objects.all(),
-        "networks": Network.objects.all()
     }
     return render(request, 'index.html', context)
 
 def new(request):
-    context = {
-        "networks": Network.objects.all()
-    }
-    return render(request, 'new.html', context)
+    return render(request, 'new.html')
 
 def show_details(request, number):
     context = {
@@ -23,7 +19,6 @@ def show_details(request, number):
 
 def edit(request, number):
     context = {
-        "networks": Network.objects.all(),
         "show_edit": Show.objects.get(id=number)
     }
     return render(request, 'edit.html', context)
@@ -37,7 +32,7 @@ def add_show(request):
     if request.method == 'GET':
         return redirect('/shows')
     if request.method == 'POST':
-        Show.objects.create(title=request.POST['title'],network=Network.objects.get(name=request.POST['network']),release_date=request.POST['release_date'],desc=request.POST['desc'])
+        Show.objects.create(title=request.POST['title'],network=request.POST['network'],release_date=request.POST['release_date'],desc=request.POST['desc'])
         return redirect('/shows')
 
 def edit_show(request):
@@ -46,7 +41,7 @@ def edit_show(request):
     if request.method == 'POST':
         show_to_edit = Show.objects.get(id=request.POST['show_id'])
         show_to_edit.title = request.POST['title']
-        show_to_edit.network = Network.objects.get(name=request.POST['network'])
+        show_to_edit.network = request.POST['network']
         show_to_edit.release_date = request.POST['release_date']
         show_to_edit.desc = request.POST['desc']
         show_to_edit.save()
